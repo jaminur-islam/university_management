@@ -1,5 +1,6 @@
-import express, { Application, Request, Response } from 'express'
+import express, { Application } from 'express'
 import cors from 'cors'
+import userRouter from '../src/app/modules/users/users.router'
 const app: Application = express()
 
 app.use(cors())
@@ -10,8 +11,6 @@ app.use(
   })
 )
 
-app.use('/api/v1/user', (req: Request, res: Response) => {
-  res.send('ok')
-})
+app.use('/api/v1/user', userRouter)
 
 export { app }
