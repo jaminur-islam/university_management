@@ -11,7 +11,4 @@ app.use("/api/v1/user", (req, res) => {
     res.send("ok")
 })
 
-//sagor now
-
-
 export { app }
