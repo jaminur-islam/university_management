@@ -1,14 +1,24 @@
-import express, { Application } from "express"
-import cors from "cors"
+import express, { Application, Request, Response } from 'express'
+import cors from 'cors';
 const app: Application = express();
 
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }))
+const port = 5000
+
+app.use(cors())
+app.use(express.json())
+
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+)
+
+app.use('/api/v1/user', 
 
 
-app.use("/api/v1/user", (req, res) => {
-    res.send("ok")
+
+(req:Request, res:any) => {
+  res.send('ok')
 })
 
 export { app }
