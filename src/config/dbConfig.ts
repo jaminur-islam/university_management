@@ -1,6 +1,5 @@
 import mongoose, { ConnectOptions } from 'mongoose'
 import config from './index'
-import process from 'process'
 import { errorLogger, logger } from '../shared/logger'
 
 const connectToDatabase = async () => {

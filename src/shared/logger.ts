@@ -1,11 +1,8 @@
 import path from 'path'
-import process from 'process'
 import DailyRotateFile from 'winston-daily-rotate-file'
 import { createLogger, format, transports } from 'winston'
 import config from '../../src/config/index'
 const { combine, timestamp, label, printf } = format
-
-console.log(config.node_env)
 
 const myFormat = printf(({ level, message, label, timestamp }) => {
   const date = new Date(timestamp)
