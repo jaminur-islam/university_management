@@ -1,21 +1,51 @@
-import mongoose from 'mongoose'
-import config from '.'
+import mongoose, { ConnectOptions } from 'mongoose'
+import config from './index'
+import process from 'process'
+import { errorLogger, logger } from '../shared/logger'
 
-mongoose.connect(config.database_url as string)
+const connectToDatabase = async () => {
+  try {
+    await mongoose.connect(
+      config.database_url as string,
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      } as ConnectOptions
+    )
+    logger.info('Connected to MongoDB')
 
-mongoose.connection.on('connected', () => {
-  console.log('Mongodb connected successfully')
-})
+    // Event listeners for connection status
+    mongoose.connection.on('connected', () => {
+      logger.info('Mongoose connected to MongoDB')
+    })
 
-mongoose.connection.on('reconnected', () => {
-  console.log('Mongodb reconnected successfully')
-})
+    mongoose.connection.on('error', err => {
+      errorLogger.error('Mongoose connection error:', err)
+    })
 
-mongoose.connection.on('error', error => {
-  console.log('mongodb connection error', error)
-  mongoose.disconnect()
-})
+    mongoose.connection.on('disconnected', () => {
+      errorLogger.error('Mongoose disconnected from MongoDB')
+    })
 
-mongoose.connection.on('disconnected', () => {
-  console.log('mongodb disconnected')
-})
+    mongoose.connection.on('reconnected', () => {
+      logger.info('MongoDB reconnected successfully')
+    })
+
+    process.on('SIGINT', () => {
+      mongoose.connection
+        .close()
+        .then(() => {
+          logger.info('Mongoose connection closed')
+          process.exit(0)
+        })
+        .catch(err => {
+          errorLogger.error('Mongoose connection error:', err)
+          process.exit(1)
+        })
+    })
+  } catch (error) {
+    errorLogger.error('Error connecting to MongoDB:', error)
+  }
+}
+
+export { connectToDatabase }

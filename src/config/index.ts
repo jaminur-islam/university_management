@@ -9,4 +9,5 @@ export default {
     ? process.env.DATABASE_URL
     : process.env.DATABASE_URL_LOCAL,
   default_password: process.env.DEFAULT_PASSWORD,
+  node_env: process.env.NODE_ENV,
 }
