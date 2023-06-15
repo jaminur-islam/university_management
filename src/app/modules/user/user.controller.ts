@@ -1,26 +1,29 @@
-import { RequestHandler } from 'express';
+import { Request, RequestHandler, Response } from 'express';
 import { userServices } from './user.services';
+import { catchAsync } from '../../../shared/catchAsync';
+import { sendResponse } from '../../../shared/sendResponse';
+import httpStatus from 'http-status';
 
-const createUser: RequestHandler = async (req, res, next) => {
-  try {
-    const user = await userServices.createUser(req.body);
-    return res.send({ status: true, data: user });
-  } catch (err) {
-    next(err);
+const createUser: RequestHandler = catchAsync(async (req, res) => {
+  const result = await userServices.createUser(req.body);
+  return sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'User created',
+    data: result,
+  });
+});
+
+const getAllUser: RequestHandler = catchAsync(
+  async (req: Request, res: Response) => {
+    const result = await userServices.getAllUser();
+    return sendResponse(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: null,
+      data: result,
+    });
   }
-};
-const getAllUser: RequestHandler = async (req, res, next) => {
-  try {
-    const user = await userServices.getAllUser();
-    res.send({ status: true, data: user });
-    next();
-  } catch (err) {
-    if (err instanceof Error) {
-      next(err);
-    } else {
-      next(err);
-    }
-  }
-};
+);
 
 export const userController = { createUser, getAllUser };
