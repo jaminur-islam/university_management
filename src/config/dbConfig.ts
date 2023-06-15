@@ -1,6 +1,6 @@
-import mongoose, { ConnectOptions } from 'mongoose'
-import config from './index'
-import { errorLogger, logger } from '../shared/logger'
+import mongoose, { ConnectOptions } from 'mongoose';
+import config from './index';
+import { errorLogger, logger } from '../shared/logger';
 
 const connectToDatabase = async () => {
   try {
@@ -10,41 +10,41 @@ const connectToDatabase = async () => {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       } as ConnectOptions
-    )
-    logger.info('Connected to MongoDB')
+    );
+    logger.info('Connected to MongoDB');
 
     // Event listeners for connection status
     mongoose.connection.on('connected', () => {
-      logger.info('Mongoose connected to MongoDB')
-    })
+      logger.info('Mongoose connected to MongoDB');
+    });
 
     mongoose.connection.on('error', err => {
-      errorLogger.error('Mongoose connection error:', err)
-    })
+      errorLogger.error('Mongoose connection error:', err);
+    });
 
     mongoose.connection.on('disconnected', () => {
-      errorLogger.error('Mongoose disconnected from MongoDB')
-    })
+      errorLogger.error('Mongoose disconnected from MongoDB');
+    });
 
     mongoose.connection.on('reconnected', () => {
-      logger.info('MongoDB reconnected successfully')
-    })
+      logger.info('MongoDB reconnected successfully');
+    });
 
     process.on('SIGINT', () => {
       mongoose.connection
         .close()
         .then(() => {
-          logger.info('Mongoose connection closed')
-          process.exit(0)
+          logger.info('Mongoose connection closed');
+          process.exit(0);
         })
         .catch(err => {
-          errorLogger.error('Mongoose connection error:', err)
-          process.exit(1)
-        })
-    })
+          errorLogger.error('Mongoose connection error:', err);
+          process.exit(1);
+        });
+    });
   } catch (error) {
-    errorLogger.error('Error connecting to MongoDB:', error)
+    errorLogger.error('Error connecting to MongoDB:', error);
   }
-}
+};
 
-export { connectToDatabase }
+export { connectToDatabase };

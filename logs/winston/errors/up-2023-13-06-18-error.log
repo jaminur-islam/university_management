@@ -1,0 +1,27 @@
+
+    {
+        date: Tue Jun 13 2023 18:31:20,
+        label: [university_project!],
+        level: error,
+        message: errorhandler [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "role"
+    ],
+    "message": "role is required"
+  }
+]       
+    }
+    
+
+    {
+        date: Tue Jun 13 2023 18:31:50,
+        label: [university_project!],
+        level: error,
+        message: Mongoose disconnected from MongoDB       
+    }
+    

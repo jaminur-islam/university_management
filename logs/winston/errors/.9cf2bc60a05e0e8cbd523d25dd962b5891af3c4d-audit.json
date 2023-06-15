@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/media/myP/Next Level Web Development/Milston-3-SDLC+project/university_management/logs/winston/errors/.9cf2bc60a05e0e8cbd523d25dd962b5891af3c4d-audit.json",
+    "files": [
+        {
+            "date": 1686623055416,
+            "name": "/media/myP/Next Level Web Development/Milston-3-SDLC+project/university_management/logs/winston/errors/up-2023-13-06-08-error.log",
+            "hash": "19387892f993688384f33b03ef23196a6c6e7b87ae54cc7e290d11f4285fe7b7"
+        },
+        {
+            "date": 1686639381047,
+            "name": "/media/myP/Next Level Web Development/Milston-3-SDLC+project/university_management/logs/winston/errors/up-2023-13-06-12-error.log",
+            "hash": "c701e0c9ec45ac9285cc1fc4ee3a77ce97dfeb65d3ec91385b91e02bc2f4f578"
+        },
+        {
+            "date": 1686659478854,
+            "name": "/media/myP/Next Level Web Development/Milston-3-SDLC+project/university_management/logs/winston/errors/up-2023-13-06-18-error.log",
+            "hash": "e2ae544b31cdc62452f6c4ebbc8082edcb6d5865aba333c88e9bd94c77f1d8f4"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -1,0 +1,32 @@
+
+    {
+        date: Tue Jun 13 2023 18:31:18,
+        label: [university_project!],
+        level: info,
+        message: Connected to MongoDB       
+    }
+    
+
+    {
+        date: Tue Jun 13 2023 18:31:19,
+        label: [university_project!],
+        level: info,
+        message: Mongoose connected to MongoDB       
+    }
+    
+
+    {
+        date: Tue Jun 13 2023 18:31:19,
+        label: [university_project!],
+        level: info,
+        message: Connected to MongoDB       
+    }
+    
+
+    {
+        date: Tue Jun 13 2023 18:31:50,
+        label: [university_project!],
+        level: info,
+        message: Mongoose connection closed       
+    }
+    
