@@ -1,25 +1,25 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "/media/myP/Next Level Web Development/Milston-3-SDLC+project/university_management/logs/winston/successes/.dfeafa24f5d43e8f626a1599fd20a98803995772-audit.json",
+  "files": [
+    {
+      "date": 1686623055413,
+      "name": "/media/myP/Next Level Web Development/Milston-3-SDLC+project/university_management/logs/winston/successes/up-2023-13-06-08-success.log",
+      "hash": "e5714ec25829938bf025af42e28ab72812a1c5f91c6080004e9c58ab631e987d"
     },
-    "auditLog": "/media/myP/Next Level Web Development/Milston-3-SDLC+project/university_management/logs/winston/successes/.dfeafa24f5d43e8f626a1599fd20a98803995772-audit.json",
-    "files": [
-        {
-            "date": 1686623055413,
-            "name": "/media/myP/Next Level Web Development/Milston-3-SDLC+project/university_management/logs/winston/successes/up-2023-13-06-08-success.log",
-            "hash": "e5714ec25829938bf025af42e28ab72812a1c5f91c6080004e9c58ab631e987d"
-        },
-        {
-            "date": 1686639443512,
-            "name": "/media/myP/Next Level Web Development/Milston-3-SDLC+project/university_management/logs/winston/successes/up-2023-13-06-12-success.log",
-            "hash": "28b85d5b2ceab6bcc1e1b84a1da37a6d34a07e3b63702a170d1cede0d3c2c082"
-        },
-        {
-            "date": 1686659478849,
-            "name": "/media/myP/Next Level Web Development/Milston-3-SDLC+project/university_management/logs/winston/successes/up-2023-13-06-18-success.log",
-            "hash": "ec20174d92ac1cc8d51e463d80868189ae7bd80aa7c16429fbc6541692eb47bb"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1686639443512,
+      "name": "/media/myP/Next Level Web Development/Milston-3-SDLC+project/university_management/logs/winston/successes/up-2023-13-06-12-success.log",
+      "hash": "28b85d5b2ceab6bcc1e1b84a1da37a6d34a07e3b63702a170d1cede0d3c2c082"
+    },
+    {
+      "date": 1686659478849,
+      "name": "/media/myP/Next Level Web Development/Milston-3-SDLC+project/university_management/logs/winston/successes/up-2023-13-06-18-success.log",
+      "hash": "ec20174d92ac1cc8d51e463d80868189ae7bd80aa7c16429fbc6541692eb47bb"
+    }
+  ],
+  "hashType": "sha256"
 }

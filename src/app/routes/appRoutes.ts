@@ -1,9 +1,21 @@
-import express from 'express';
+import express, { Router } from 'express';
 import { userRouter } from '../modules/user/user.router';
 import { semesterRouter } from '../modules/academicSemester/academicSemester.router';
-const appRouter = express.Router();
+const appRouters = express.Router();
 
-appRouter.use('/user', userRouter);
-appRouter.use('/academic-semester', semesterRouter);
+const routerList: { path: string; router: Router }[] = [
+  {
+    path: '/user',
+    router: userRouter,
+  },
+  {
+    path: '/academic-semester',
+    router: semesterRouter,
+  },
+];
 
-export { appRouter };
+routerList.forEach(router => {
+  appRouters.use(router.path, router.router);
+});
+
+export { appRouters };
